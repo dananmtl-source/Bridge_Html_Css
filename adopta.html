@@ -16,10 +16,22 @@
         <nav>
             <ul>
                 <li><a href="/index.html"><img class="Logo" src="/assets/img/go_logo_m.webp" alt="Logo"></a></li>
-                <li><a href="/adopta.html">Adopta</a></li>
-                <li><a href="/about.html">Quienes somos</a></li>
-                <li><a href="/contact.html">Contacto</a></li>
+                <li class="nav-li"><a href="/adopta.html">Adopta</a></li>
+                <li class="nav-li"><a href="/about.html">Quienes somos</a></li>
+                <li class="nav-li"><a href="/contact.html">Contacto</a></li>
+                <li class="nav-button">
+                    <input class="nav-check" id="nav-checkbox" type="checkbox">
+                    <label for="nav-checkbox"><img class="nav-img" src="assets/img/menu-bar.webp" alt=""></label>
+                    <div class="dropdown-content">
+                    <ul class="dropdownList">
+                        <li><a class="dropdown-a" href="/adopta.html">Adopta</a></li>
+                        <li><a class="dropdown-a" href="/about.html">Quienes somos</a></li>
+                        <li><a class="dropdown-a" href="/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+                </li>
             </ul>
+            
         </nav>
     </header>
     <main>
@@ -56,14 +68,14 @@
                                 <h2>Datos del cliente</h2>
                                 <div>
                                     <label for="nombre">Nombre del dueño de la empresa:</label>
-                                    <input required pattern="(([A-Z][a-z]*)(\\s*)([A-Z][a-z]*)(\\s*)([A-Z][a-z]*)){1,30}" class="inputText" id="nombreCliente" type="text">
+                                    <input required  class="inputText" id="nombreCliente" type="text">
                                     <label for="empresa">Nombre de la Empresa:</label>
-                                    <input required pattern="(([A-Z][a-z]*)(\\s*)([A-Z][a-z]*)(\\s*)([A-Z][a-z]*)){1,30}" class="inputText" id="nombreEmpresa" type="text">
+                                    <input required  class="inputText" id="nombreEmpresa" type="text">
                                 </div>
 
                                 <div>
                                     <label for="telefono">Teléfono:</label>
-                                    <input required pattern="^(\\+34|0034|34)?[6789]\\d{8}$" class="inputText" type="tel" name="telefono" id="telefono">
+                                    <input required pattern="[0-9]{9}"  class="inputText" type="tel" name="telefono" id="telefono">
                                     <label for="email">Correo electrónico:</label>
                                     <input required class="inputText" type="email" name="email" id="email">
                                 </div>
@@ -72,19 +84,19 @@
                                     <label for="nPersonas">Número de empleados en la oficina:</label>
                                     <input required min="0" max="20" class="inputNumber" type="number" name="nEmpleados" id="nEmpleados">
                                     <label for="clientes">Recibe clientes en la oficina?</label>
-                                    <input required type="checkbox" name="clientesTrue" id="clientesTrue">
-                                    <label min="0" max="5" class="nClientes" for="nClientes">Cuantos clientes puede haber en la oficina al mismo tiempo?</label>
-                                    <input class="nClientes" type="number" name="nClientes" id="nClientes">
+                                    <input type="checkbox" name="clientesTrue" id="clientesTrue">
+                                    <label class="nClientes" for="nClientes">Cuantos clientes puede haber en la oficina al mismo tiempo?</label>
+                                    <input min="0" max="5" class="nClientes" type="number" name="nClientes" id="nClientes">
                                 </div>
             
                                 <div>
                                     <label for="preferencias">Si su oficina presenta particularidades no contempladas expliquelas a continuación:</label>
-                                    <textarea class="inputText" id="preferencias" name="preferencias"></textarea>
+                                    <textarea class="inputArea" id="preferencias" name="preferencias"></textarea>
             
                                 </div>
             
                             </fieldset>
-                            <input class="button-style" type="submit" value="Enviar">
+                            <input class="button-style" type="submit" commandfor="adoptaDialog" command="show-modal" value="Enviar">
                             <dialog id="adoptaDialog">
                                 <p>Has adoptado un gatito con exito!</p>
                                 <button commandfor="adoptaDialog" command="close"></button>
@@ -102,7 +114,7 @@
     <!--metemos a pelo un formulario para rellenar datos para adoptar un gatito para tu oficina-->
     <footer class="main-footer">
         <!--footer con datos de contacto copyright imagenes de redes sociales telefono email-->
-        <section class="foot-section sectionA">
+        <section class="foot-section">
             <div class="foot-div">
                 <h2>CONTACTO</h2>
                 <p>tel: <a href="tel:+34944762894">944762894</a></p>
